@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Tiago Yalcon · Medicina Integrativa</title>
+<meta name="description" content="Medicina funcional integrativa para saúde 35+: emagrecimento, longevidade, menopausa, jejum e o Método Saúde Integral Magnética.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F3EC; --surface:#FFFFFF; --sand:#ECE5D6; --ink:#1E2A24; --muted:#5E6B63;
+  --forest:#23402F; --forest-2:#2E5240; --sage:#7E9C83; --sage-soft:#DDE7DB; --clay:#C07A4F; --clay-soft:#F1DDCD; --line:#E2DCCD;
+  --radius:22px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,background .2s,box-shadow .2s;text-align:center}
+.btn-primary{background:var(--forest);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(35,64,47,.6)}
+.btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+.btn-light{background:#F6F3EC;color:var(--forest)}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-clay{background:var(--clay);color:#fff}
+.btn-clay:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(192,122,79,.7)}
+section{padding:110px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(34px,4.4vw,54px);max-width:660px;margin-top:18px}
+.sec-head p{color:var(--muted);max-width:400px}
+.surface{background:var(--surface)}
+.dark{background:var(--forest);color:#E8EFE6}
+.dark .eyebrow{color:#A9C3AC}
+.dark .sec-head p{color:#C5D3C5}
+.check{list-style:none}
+.check li{padding:12px 0 12px 34px;position:relative;border-bottom:1px solid var(--line)}
+.check li::before{content:"";position:absolute;left:0;top:16px;width:20px;height:20px;border-radius:50%;background:var(--sage-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2323402F' stroke-width='3'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.dark .check li{border-color:rgba(255,255,255,.14)}
+.dark .check li::before{background-color:rgba(255,255,255,.12);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A9C3AC' stroke-width='3'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E")}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(246,243,236,.88);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.scrolled{border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{font-family:Fraunces,serif;font-size:22px;display:flex;flex-direction:column;line-height:1;white-space:nowrap}
+.logo small{font-family:Inter;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-top:5px}
+.nav-links{display:flex;gap:26px;font-size:14.5px;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{padding:11px 20px;font-size:14px}
+@media(max-width:1020px){.nav-links{display:none}}
+@media(max-width:420px){.nav-cta{padding:10px 14px;font-size:13px}.logo{font-size:19px}}
+
+/* HERO */
+.hero{padding:70px 0 100px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(44px,6.4vw,82px);margin:22px 0 26px}
+.hero h1 em{font-style:italic;color:var(--forest)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:530px;margin-bottom:36px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;flex-wrap:wrap;gap:26px 38px;margin-top:54px;padding-top:30px;border-top:1px solid var(--line)}
+.stats b{white-space:nowrap;display:block;font-family:Fraunces,serif;font-weight:400;font-size:34px;color:var(--forest);line-height:1.1}
+.stats span{font-size:13.5px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:220px 220px var(--radius) var(--radius);background:linear-gradient(160deg,var(--sage-soft),var(--sand));display:flex;align-items:center;justify-content:center}
+.portrait{background:linear-gradient(180deg,#E9E9E7 0%,#F1F0EC 100%);aspect-ratio:764/740}
+.portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:inherit}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 6px}
+.compare div{padding:22px;border-radius:16px;font-size:15px}
+.compare .a{background:var(--sand);color:var(--muted)}
+.compare .b{background:var(--forest);color:#E8EFE6}
+.compare h5{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.compare ul{list-style:none}.compare li{padding:4px 0}
+@media(max-width:520px){.compare{grid-template-columns:1fr}}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pillar{padding:38px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pillar span{font-family:Fraunces,serif;font-size:15px;color:var(--clay)}
+.pillar h3{font-size:30px;margin:10px 0 10px}
+.pillar p{color:var(--muted);font-size:15px}
+@media(max-width:900px){.pillars-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pillars-grid{grid-template-columns:1fr}}
+.extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.extra{border:1px solid var(--line);border-radius:var(--radius);padding:44px;display:flex;flex-direction:column;gap:14px;background:var(--bg)}
+.extra h3{font-size:34px}
+.extra p{color:var(--muted)}
+.extra a{margin-top:10px;font-weight:600;color:var(--forest)}
+@media(max-width:800px){.extra-grid{grid-template-columns:1fr}.extra{padding:30px}}
+.card .more{margin-top:20px;font-size:14px;font-weight:600;color:var(--forest)}
+.portrait .ph{text-align:center;color:var(--sage);font-size:14px;letter-spacing:.08em}
+.portrait .ph svg{width:120px;height:120px;opacity:.55;margin-bottom:10px}
+.badge{position:absolute;left:-28px;bottom:48px;background:var(--surface);border-radius:18px;padding:16px 20px;box-shadow:0 20px 50px -20px rgba(30,42,36,.35);display:flex;gap:12px;align-items:center;font-size:14px}
+.badge i{width:40px;height:40px;border-radius:50%;background:var(--sage-soft);display:grid;place-items:center;font-style:normal;color:var(--forest)}
+.badge b{display:block;font-size:15px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait{max-width:440px;margin:0 auto;width:100%}.badge{left:12px}.stats{gap:22px 30px}}
+
+/* MARQUEE */
+.marquee{background:var(--forest);color:#E8EFE6;padding:20px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:48px;animation:scroll 40s linear infinite;font-family:Fraunces,serif;font-size:24px;font-style:italic}
+.marquee-track span::after{content:"✦";font-style:normal;margin-left:48px;color:var(--sage);font-size:16px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* IDENTIFY */
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:70px}
+.qcard{background:var(--surface);border-radius:var(--radius);padding:28px;font-family:Fraunces,serif;font-size:20px;line-height:1.35;position:relative}
+.qcard::before{content:"?";display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--clay-soft);color:var(--clay);font-family:Inter;font-weight:600;font-size:16px;margin-bottom:18px}
+.qcard.wide{grid-column:span 1}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.why h3{font-size:34px;margin-bottom:20px}
+.why p{color:var(--muted)}
+.alert{background:var(--clay-soft);border-radius:var(--radius);padding:34px;margin-top:10px}
+.alert b{font-family:Fraunces,serif;font-weight:400;font-size:26px;display:block;margin-bottom:12px;color:var(--ink)}
+.alert p{color:#6B5446;margin-bottom:12px}
+@media(max-width:900px){.qs{grid-template-columns:1fr}.why{grid-template-columns:1fr;gap:30px}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.about-photo{aspect-ratio:400/488;overflow:hidden;border-radius:var(--radius);background:linear-gradient(200deg,var(--sand),var(--sage-soft));display:grid;place-items:center;color:var(--sage);font-size:14px;letter-spacing:.08em;text-align:center;position:sticky;top:110px}
+.about h2{font-size:clamp(34px,4.4vw,54px);margin:18px 0 26px}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:17.5px}
+.about-text p.big{font-family:Fraunces,serif;color:var(--ink);font-size:25px;line-height:1.35}
+.about-text h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);margin:34px 0 12px}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0}
+.mini-stats div{background:var(--surface);border-radius:16px;padding:20px}
+.mini-stats b{font-family:Fraunces,serif;font-weight:400;font-size:30px;color:var(--forest);display:block}
+.mini-stats span{font-size:13.5px;color:var(--muted)}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.mission{border-left:3px solid var(--clay);padding:6px 0 6px 22px;font-family:Fraunces,serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.4}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:30px}.about-photo{position:static;max-width:420px}.mini-stats{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:520px){.mini-stats{grid-template-columns:1fr}}
+
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--bg);border-radius:var(--radius);padding:32px 26px 30px;display:flex;flex-direction:column;min-height:300px;transition:transform .3s,background .3s}
+.card:hover{transform:translateY(-6px);background:var(--sage-soft)}
+.card .num{font-size:13px;color:var(--sage);font-weight:600}
+.card .ic{width:56px;height:56px;border-radius:50%;background:var(--surface);display:grid;place-items:center;margin:22px 0 26px;color:var(--forest)}
+.card h3{font-size:28px;margin-bottom:12px}
+.card p{color:var(--muted);font-size:15px;flex:1}
+@media(max-width:1000px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* PRICING CONSULTAS */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.plan{border-radius:28px;padding:44px;background:var(--bg);display:flex;flex-direction:column;border:1px solid var(--line)}
+.plan.featured{background:var(--forest);color:#E8EFE6;border-color:var(--forest)}
+.plan .tag{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.plan.featured .tag{color:#A9C3AC}
+.plan h3{font-size:32px;margin:12px 0 6px}
+.price{font-family:Fraunces,serif;font-size:56px;line-height:1;margin:22px 0 6px}
+.price small{font-family:Inter;font-size:15px;opacity:.7;margin-left:6px}
+.plan .sub{font-size:14px;opacity:.75;margin-bottom:24px}
+.steps{list-style:none;counter-reset:s;margin-bottom:30px;flex:1}
+.steps li{counter-increment:s;padding:14px 0 14px 44px;position:relative;border-bottom:1px solid rgba(255,255,255,.14);font-size:15.5px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:13px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:13px;font-weight:600}
+.steps li b{display:block;font-weight:600}
+.plan .check{margin-bottom:30px;flex:1}
+.plan .btn{align-self:flex-start}
+.plan-ribbon{align-self:flex-start;background:var(--clay);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+@media(max-width:860px){.plans{grid-template-columns:1fr}.plan{padding:32px 26px}}
+
+/* SIM */
+.sim-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:80px}
+.sim-intro h3{font-size:30px;margin-bottom:16px}
+.sim-intro p{color:var(--muted);margin-bottom:14px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:90px}
+.benefit{background:var(--surface);border-radius:18px;padding:24px;display:flex;gap:14px;align-items:flex-start;font-size:15.5px}
+.benefit i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--sage-soft);color:var(--forest);display:grid;place-items:center;font-style:normal;font-size:14px}
+@media(max-width:900px){.sim-intro{grid-template-columns:1fr;gap:30px}.benefits{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.benefits{grid-template-columns:1fr}}
+
+.curr{background:var(--surface);border-radius:32px;padding:50px}
+.curr-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:34px}
+.curr-head h3{font-size:clamp(30px,3.6vw,44px)}
+.curr-head p{color:var(--muted);max-width:420px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.tab{border:1px solid var(--line);background:none;font:inherit;font-size:15px;font-weight:600;padding:11px 22px;border-radius:999px;cursor:pointer;color:var(--muted);transition:.2s}
+.tab span{font-weight:400;opacity:.7;margin-left:6px;font-size:13px}
+.tab.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+.panel{display:none;grid-template-columns:repeat(2,1fr);gap:0 40px;list-style:none;counter-reset:l}
+.panel.on{display:grid}
+.panel li{counter-increment:l;padding:14px 0 14px 48px;position:relative;border-bottom:1px solid var(--line);font-size:15.5px}
+.panel li::before{content:counter(l,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:Fraunces,serif;color:var(--clay);font-size:17px}
+@media(max-width:760px){.curr{padding:30px 22px}.panel{grid-template-columns:1fr}}
+
+.offer{margin-top:40px;display:grid;grid-template-columns:1.2fr .8fr;gap:0;border-radius:32px;overflow:hidden}
+.offer-l{background:var(--forest);color:#E8EFE6;padding:50px}
+.offer-l h3{font-size:36px;margin:14px 0 24px}
+.offer-r{background:var(--clay-soft);padding:50px;display:flex;flex-direction:column;justify-content:center}
+.offer-r .price{color:var(--ink);font-size:72px}
+.offer-r .sub{color:#6B5446;margin-bottom:26px}
+.guarantee{display:flex;gap:14px;align-items:flex-start;margin-top:26px;font-size:14px;color:#6B5446}
+.guarantee i{flex:none;width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;font-style:normal;color:var(--clay)}
+@media(max-width:860px){.offer{grid-template-columns:1fr}.offer-l,.offer-r{padding:34px 26px}}
+
+/* JEJUM */
+.jejum-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.jejum h2{font-size:clamp(34px,4.4vw,54px);margin:18px 0 22px}
+.jejum p{color:#C5D3C5;margin-bottom:16px}
+.nobel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px;margin:28px 0}
+.nobel span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E7B48F}
+.nobel h4{font-family:Fraunces,serif;font-weight:400;font-size:24px;margin:10px 0 10px;color:#fff}
+.nobel p{margin:0;font-size:15.5px}
+.warn{display:flex;gap:14px;background:rgba(231,180,143,.14);border-radius:16px;padding:20px;font-size:15px;color:#F1DDCD}
+.warn b{color:#fff}
+.box21{background:#F6F3EC;color:var(--ink);border-radius:28px;padding:40px}
+.box21 .tag{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.box21 h3{font-size:32px;margin:10px 0 20px}
+.box21 .check{margin-bottom:28px}
+.jb{margin-top:80px}
+.jb h3{font-size:clamp(28px,3.4vw,40px);margin-bottom:30px;color:#fff}
+.jb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.jb-item{border-top:1px solid rgba(255,255,255,.18);padding:22px 0}
+.jb-item span{font-family:Fraunces,serif;font-size:15px;color:#E7B48F}
+.jb-item h4{font-family:Fraunces,serif;font-weight:400;font-size:22px;color:#fff;margin:6px 0 6px}
+.jb-item p{font-size:14.5px;color:#C5D3C5;margin:0}
+@media(max-width:900px){.jejum-grid{grid-template-columns:1fr;gap:40px}.jb-grid{grid-template-columns:1fr 1fr}.box21{padding:30px 24px}}
+@media(max-width:560px){.jb-grid{grid-template-columns:1fr}}
+
+/* RESULTS */
+.results{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:60px}
+.res{background:var(--surface);border-radius:18px;padding:22px 18px;text-align:center}
+.res b{font-family:Fraunces,serif;font-weight:400;font-size:34px;color:var(--forest);display:block}
+.res strong{display:block;font-size:14.5px;margin-top:6px}
+.res span{font-size:12.5px;color:var(--muted)}
+@media(max-width:1000px){.results{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.results{grid-template-columns:1fr 1fr}}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+.story{background:var(--surface);border-radius:28px;padding:40px;display:flex;flex-direction:column}
+.story .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.story .kpis span{background:var(--sage-soft);color:var(--forest);font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px}
+.story blockquote{font-family:Fraunces,serif;font-size:21px;line-height:1.45;flex:1}
+.story footer,.tcard footer{margin-top:24px;font-size:14px;color:var(--muted);background:none;padding:0}
+.story footer b,.tcard footer b{color:var(--ink);display:block;font-size:15px}
+@media(max-width:860px){.feat{grid-template-columns:1fr}.story{padding:30px 24px}}
+.slider{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin}
+.tcard{flex:0 0 min(360px,85%);scroll-snap-align:start;background:var(--surface);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}
+.tcard .q{font-family:Fraunces,serif;font-size:50px;line-height:.6;color:var(--sage)}
+.tcard p{font-size:15.5px;color:var(--muted);margin-top:14px;flex:1}
+.slider-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:14px}
+.slider-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);background:none;cursor:pointer;font-size:18px;color:var(--ink)}
+.slider-nav button:hover{background:var(--ink);color:var(--bg)}
+
+/* TOPICS */
+.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.topic{border-radius:var(--radius);padding:28px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.topic:nth-child(3n+1){background:var(--sand)}
+.topic:nth-child(3n+2){background:var(--sage-soft)}
+.topic:nth-child(3n){background:var(--clay-soft)}
+.topic .tag{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.topic h3{font-size:26px;padding-right:60px}
+.topic .play{position:absolute;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px}
+@media(max-width:900px){.topics{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.topics{grid-template-columns:1fr}}
+
+/* COMMUNITY */
+.comm{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.comm a{border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:10px;transition:.25s;background:var(--bg)}
+.comm a:hover{border-color:var(--forest);transform:translateY(-4px)}
+.comm h3{font-size:24px}
+.comm p{color:var(--muted);font-size:14.5px;flex:1}
+.comm span{font-weight:600;color:var(--forest);font-size:14px}
+@media(max-width:900px){.comm{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.comm{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq h2{font-size:clamp(34px,4vw,50px);margin-top:18px}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:Fraunces,serif;font-size:22px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:Inter;font-weight:300;font-size:28px;line-height:1;color:var(--sage);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:14px;max-width:620px}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr;gap:20px}}
+
+/* CTA / FOOTER */
+.cta{text-align:center;padding:120px 0}
+.cta h2{font-size:clamp(40px,6vw,76px);max-width:900px;margin:22px auto 28px}
+.cta h2 em{color:var(--forest)}
+.cta p{color:var(--muted);max-width:520px;margin:0 auto 38px;font-size:18px}
+.cta .ctas{justify-content:center}
+.site-foot{background:var(--ink);color:#B9C2BC;padding:60px 0 34px;font-size:15px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.site-foot .logo{color:#fff}
+.site-foot h4{color:#fff;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+.site-foot li{list-style:none;padding:4px 0}
+.site-foot a:hover{color:#fff}
+.legal{padding-top:26px;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#8A958E}
+@media(max-width:860px){.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot{grid-template-columns:1fr}}
+
+.wa{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.35);z-index:60;transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.marquee-track{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">Dr. Tiago Yalcon<small>Medicina Integrativa</small></a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#consultas">Consultas</a>
+      <a href="#metodo-sim">Método S.I.M.</a>
+      <a href="#jejum">Jejum Magnético</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#faq">Dúvidas</a>
+    </div>
+    <a href="https://wa.me/5547997749140" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Agendar consulta</a>
+  </div>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Medicina funcional integrativa · Saúde 35+</span>
+      <h1>Saúde integral para <em>corpo, emoção, mente</em> e alma.</h1>
+      <p class="lead">Conquiste o peso ideal, hábitos saudáveis e autoestima — com acompanhamento médico que trata as causas, não apenas os sintomas. Emagrecimento, longevidade, menopausa e suplementação.</p>
+      <div class="ctas">
+        <a href="https://wa.me/5547997749140" target="_blank" rel="noopener" class="btn btn-primary">Agendar pelo WhatsApp →</a>
+        <a href="#metodo-sim" class="btn btn-ghost">Conhecer o Método S.I.M.</a>
+      </div>
+      <div class="stats">
+        <div><b>25+</b><span>anos de experiência</span></div>
+        <div><b>520+</b><span>treinamentos presenciais</span></div>
+        <div><b>10 mil+</b><span>pessoas impactadas</span></div>
+        <div><b>92,9 mil</b><span>seguidores no Instagram</span></div>
+        <div><b>6.000+</b><span>conteúdos sobre saúde</span></div>
+      </div>
+    </div>
+    <div class="portrait reveal">
+      <img src="https://drtiagoyalcon.com.br/wp-content/uploads/2021/09/Yalcom-mentoring.png" alt="Dr. Tiago Yalcon" class="portrait-img">
+      <div class="badge"><i>✚</i><div><b>Médico e mentor</b>Consultas presenciais e online*</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Emagrecimento saudável</span><span>Longevidade</span><span>Menopausa e andropausa</span><span>Suplementação</span><span>Jejum intermitente</span><span>Saúde intestinal</span><span>Energia e disposição</span><span>Autoestima</span>
+    <span>Emagrecimento saudável</span><span>Longevidade</span><span>Menopausa e andropausa</span><span>Suplementação</span><span>Jejum intermitente</span><span>Saúde intestinal</span><span>Energia e disposição</span><span>Autoestima</span>
+  </div>
+</div>
+
+<!-- ============ 2. VOCÊ SE IDENTIFICA ============ -->
+<section id="identifica">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Você se identifica?</span><h2>As perguntas que mais recebo no consultório</h2></div>
+      <p>Muitas pessoas já tentaram mudar a dieta, emagrecer e criar novos hábitos — mas começaram e não conseguiram manter.</p>
+    </div>
+    <div class="qs">
+      <div class="qcard reveal">Como faço uma reeducação alimentar saudável e emagreço sem o efeito sanfona?</div>
+      <div class="qcard reveal">Começo dieta ou atividade física e não consigo manter. Como ter apoio para sustentar os resultados?</div>
+      <div class="qcard reveal">Como equilibrar o apetite e diminuir a ansiedade que acabo descontando na comida?</div>
+      <div class="qcard reveal">Como fazer uma limpeza no corpo e reduzir o risco de problemas cardíacos, diabetes e doenças crônicas?</div>
+      <div class="qcard reveal">Onde buscar a informação certa para ter qualidade de vida, motivação e hábitos mais saudáveis?</div>
+      <div class="qcard reveal" style="background:var(--forest);color:#fff">Se alguma dessas perguntas é sua, você está no lugar certo.</div>
+    </div>
+    <div class="why">
+      <div class="reveal">
+        <h3>Por que é tão difícil manter os resultados?</h3>
+        <ul class="check">
+          <li>Não saber fazer um programa da maneira correta e constante</li>
+          <li>Falta de orientação sobre dieta, jejum intermitente e suplementação</li>
+          <li>Falta de apoio da família e dos amigos, levando à desistência</li>
+          <li>Fazer tudo sozinho e de forma radical, gerando efeito rebote e compulsão</li>
+          <li>Não identificar se a causa é alimentar ou fisiológica — hormonal ou efeito de medicamentos</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="alert">
+          <b>Atenção: a culpa não é sua.</b>
+          <p>Você não aprendeu a ter uma alimentação equilibrada, nem a combinar jejum, suplementação e a compreensão de como emoções e crenças influenciam a saúde.</p>
+          <p>A maioria das pessoas não consegue sozinha: precisa de orientação profissional e do apoio de um grupo. Pesquisas mostram que quem tem suporte e orientação correta alcança — e mantém — melhores resultados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SOBRE ============ -->
+<section class="about surface" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><img src="https://drtiagoyalcon.com.br/wp-content/uploads/2021/06/Foto-Tiago-Yalcon-ft1-2.png" alt="Dr. Tiago Yalcon em seu consultório" loading="lazy"></div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Quem sou eu</span>
+      <h2>Dr. Tiago Yalcon</h2>
+      <p class="big">Médico funcional integrativo, palestrante e mentor de Qualidade de Vida e Saúde Integral há mais de 25 anos.</p>
+      <div class="mini-stats">
+        <div><b>5 mil+</b><span>horas de atendimento individual</span></div>
+        <div><b>520+</b><span>treinamentos com mais de 10.686 pessoas</span></div>
+        <div><b>10 mil+</b><span>alunos formados</span></div>
+      </div>
+      <h4>O que faço</h4>
+      <p>Uno técnicas de Medicina Funcional Integrativa, coaching e autoconhecimento para proporcionar saúde integral aos meus pacientes. Tenho centenas de alunos mentorados em cursos online e estive ao lado dos melhores palestrantes e treinadores do Brasil.</p>
+      <h4>Medicina funcional integrativa</h4>
+      <p>Enxerga o indivíduo como um todo indivisível, unindo diversas áreas do conhecimento para olhar o ser humano integralmente — com o objetivo de prevenir e cuidar da saúde, e não apenas tratar a doença e seus sintomas.</p>
+      <div class="compare">
+        <div class="a"><h5>Abordagem tradicional</h5><ul><li>Foco no sintoma</li><li>Consulta rápida</li><li>Remédio para cada queixa</li></ul></div>
+        <div class="b"><h5>Medicina integrativa</h5><ul><li>Foco na causa</li><li>Escuta aprofundada</li><li>Plano de estilo de vida + terapias</li></ul></div>
+      </div>
+      <h4>Minha missão</h4>
+      <p class="mission">Ajudar e servir todas as pessoas que querem ter saúde integral, peso ideal, magnetismo pessoal, autoestima e alegria de viver.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ÁREAS ============ -->
+<section id="areas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Áreas de atuação</span><h2>Como posso te ajudar depois dos 35</h2></div>
+      <p>Cada plano é individual, construído a partir da sua história, rotina e exames.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal" style="background:var(--surface)">
+        <span class="num">01</span>
+        <div class="ic" style="background:var(--sage-soft)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M5 8h14M7 8l-3 7h6L7 8zm10 0l-3 7h6l-3-7z"/></svg></div>
+        <h3>Emagrecimento</h3>
+        <p>Perda de peso saudável e sustentável, tratando metabolismo, resistência à insulina, inflamação e comportamento alimentar — sem efeito sanfona.</p>
+        <a class="more" href="#consultas">Saiba mais →</a>
+      </article>
+      <article class="card reveal" style="background:var(--surface)">
+        <span class="num">02</span>
+        <div class="ic" style="background:var(--sage-soft)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+        <h3>Longevidade</h3>
+        <p>Prevenção de doenças crônicas, check-up estratégico 40+, saúde cardiovascular, imunidade e mais vitalidade.</p>
+        <a class="more" href="#consultas">Saiba mais →</a>
+      </article>
+      <article class="card reveal" style="background:var(--surface)">
+        <span class="num">03</span>
+        <div class="ic" style="background:var(--sage-soft)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M12 15v6M9 18h6"/></svg></div>
+        <h3>Menopausa</h3>
+        <p>Menopausa e andropausa: avaliação e terapia de reposição hormonal para mulheres e homens, com olhar individual.</p>
+        <a class="more" href="#consultas">Saiba mais →</a>
+      </article>
+      <article class="card reveal" style="background:var(--surface)">
+        <span class="num">04</span>
+        <div class="ic" style="background:var(--sage-soft)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="9" width="16" height="7" rx="3.5" transform="rotate(-35 12 12.5)"/><path d="M9.5 8.5l5 8"/></svg></div>
+        <h3>Suplementação</h3>
+        <p>Quando, como e por quê: suplementos indicados a partir de exames e necessidades reais — nada de fórmulas genéricas.</p>
+        <a class="more" href="#consultas">Saiba mais →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4b. PILARES ============ -->
+<section id="pilares" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Pilares da saúde</span><h2>Os pilares que sustentam o seu tratamento</h2></div>
+      <p>A base de todo plano integrativo: pequenas mudanças consistentes que somam grandes resultados.</p>
+    </div>
+    <div class="pillars-grid reveal">
+      <div class="pillar"><span>I.</span><h3>Alimentação</h3><p>Comida de verdade, controle glicêmico e redução de inflamação.</p></div>
+      <div class="pillar"><span>II.</span><h3>Sono</h3><p>Ritmo circadiano regulado para hormônios e metabolismo em equilíbrio.</p></div>
+      <div class="pillar"><span>III.</span><h3>Movimento</h3><p>Força e atividade física como remédio para a longevidade.</p></div>
+      <div class="pillar"><span>IV.</span><h3>Intestino</h3><p>Microbiota saudável como base de imunidade e bem-estar.</p></div>
+      <div class="pillar"><span>V.</span><h3>Hormônios</h3><p>Avaliação cuidadosa, especialmente após os 35 e na menopausa.</p></div>
+      <div class="pillar"><span>VI.</span><h3>Mente</h3><p>Gestão do estresse, propósito e conexão com quem importa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. CONSULTAS ============ -->
+<section class="surface" id="consultas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Consultas</span><h2>Agende sua consulta individual</h2></div>
+      <p>Atendimento personalizado com investigação completa, plano de dieta, suplementação e orientações para o seu caso.</p>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <span class="tag">Consulta individual</span>
+        <h3>Consulta com retorno</h3>
+        <div class="price">R$ 500</div>
+        <p class="sub">Consulta + retorno</p>
+        <ul class="check">
+          <li>Anamnese completa</li>
+          <li>Solicitação de exames</li>
+          <li>Recomendações de dieta e suplementação</li>
+          <li>Orientações para o seu caso específico</li>
+        </ul>
+        <a href="https://wa.me/5547997749140" target="_blank" rel="noopener" class="btn btn-primary">Agendar via WhatsApp →</a>
+      </div>
+      <div class="plan featured reveal">
+        <span class="plan-ribbon">Acompanhamento completo</span>
+        <span class="tag">Pacote de Saúde Integral</span>
+        <h3>4 consultas</h3>
+        <div class="price">R$ 1.200</div>
+        <p class="sub">Equivale a R$ 300 por consulta</p>
+        <ol class="steps">
+          <li><b>Consulta 1</b>Anamnese, exames, dieta, suplementação e orientações</li>
+          <li><b>Consulta 2</b>Dieta e suplementação</li>
+          <li><b>Consulta 3</b>Orientações para a imunidade</li>
+          <li><b>Consulta 4</b>Pilares da saúde integral e orientações de manutenção</li>
+        </ol>
+        <a href="https://wa.me/5547997749140" target="_blank" rel="noopener" class="btn btn-light">Quero o pacote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. MÉTODO S.I.M. ============ -->
+<section id="metodo-sim">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Programa online</span><h2>Método Saúde Integral Magnética — S.I.M.</h2></div>
+      <p>Orientação correta e suporte diário e semanal para cuidar da saúde física, emocional, mental e da alma — e manter os resultados.</p>
+    </div>
+
+    <div class="sim-intro">
+      <div class="reveal">
+        <h3>Por que criei o programa</h3>
+        <p>Na prática, vi muitas pessoas começarem uma dieta, exercícios, consultas e exames, obterem resultados por um tempo e depois desistirem — às vezes ficando pior do que antes.</p>
+        <p>Faltava um plano para depois da dieta e o apoio de família, amigos ou de um grupo. Isso gera frustração, culpa e autocrítica, e afeta a autoestima e a alegria de viver.</p>
+        <p>Acredito que as pessoas merecem ser apoiadas: ao pertencer a um grupo com o mesmo propósito, fica mais fácil manter o peso ideal, a saúde e a autoestima.</p>
+      </div>
+      <div class="reveal">
+        <h3>Este programa é para você que:</h3>
+        <ul class="check">
+          <li>Quer ter uma saúde melhor e emagrecer (ou manter o peso) de forma saudável</li>
+          <li>Deseja melhorar a autoestima e a autoconfiança</li>
+          <li>Começa algo e não continua por falta de apoio</li>
+          <li>Quer entender alimentação, suplementação e quais exames pedir ao médico</li>
+          <li>Quer pertencer a um grupo positivo que apoie seu processo</li>
+          <li>Quer transformar crenças limitantes em crenças empoderadoras</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit reveal"><i>✦</i>Emagrecimento de maneira saudável</div>
+      <div class="benefit reveal"><i>✦</i>Longevidade e prevenção de doenças crônicas</div>
+      <div class="benefit reveal"><i>✦</i>Mais vitalidade, disposição e energia</div>
+      <div class="benefit reveal"><i>✦</i>Autoestima, autocuidado e magnetismo pessoal</div>
+      <div class="benefit reveal"><i>✦</i>Equilíbrio emocional e autocontrole</div>
+      <div class="benefit reveal"><i>✦</i>Produtividade, clareza mental e foco</div>
+      <div class="benefit reveal"><i>✦</i>Apoio de um grupo de pessoas positivas</div>
+      <div class="benefit reveal"><i>✦</i>Vida integral: corpo, emoção, mente e alma</div>
+      <div class="benefit reveal"><i>✦</i>Reencontro com seu propósito de vida</div>
+    </div>
+
+    <div class="curr reveal">
+      <div class="curr-head">
+        <h3>36 aulas ao vivo, em 4 dimensões</h3>
+        <p>Formato de anuidade, com acesso às gravações na plataforma do programa.</p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-t="corpo">Corpo<span>18</span></button>
+        <button class="tab" data-t="emocao">Emoção<span>6</span></button>
+        <button class="tab" data-t="mente">Mente<span>6</span></button>
+        <button class="tab" data-t="alma">Alma<span>6</span></button>
+      </div>
+      <ol class="panel on" id="corpo">
+        <li>Jejum intermitente: os 28 benefícios</li>
+        <li>As 4 causas das doenças crônicas</li>
+        <li>Os 8 pilares da saúde integral</li>
+        <li>Sobrepeso e dietas para emagrecer com saúde</li>
+        <li>Epigenética: você não é refém da sua genética</li>
+        <li>Como ter uma imunidade blindada</li>
+        <li>Diabetes e resistência insulínica: exames e tratamentos</li>
+        <li>Higiene do sono: qualidade, não só quantidade</li>
+        <li>Detox: tipos de desintoxicação e métodos</li>
+        <li>Boa digestão: refluxo, azia e má digestão</li>
+        <li>Intestino, o segundo cérebro: disbiose e flora intestinal</li>
+        <li>Doenças cardiovasculares e pressão alta</li>
+        <li>Suplementação: quando, como e por quê</li>
+        <li>Menopausa, andropausa e reposição hormonal</li>
+        <li>Exercícios aeróbicos e anaeróbicos</li>
+        <li>Doenças autoimunes, fibromialgia, artrite e artrose</li>
+        <li>Prevenindo o câncer de maneira integral</li>
+        <li>A fonte da juventude: envelhecer não é sinônimo de doença</li>
+      </ol>
+      <ol class="panel" id="emocao">
+        <li>Prevenindo a depressão de maneira integral</li>
+        <li>Ressignificando a autoestima e o autocuidado</li>
+        <li>Doenças psicossomáticas</li>
+        <li>Autocontrole das emoções negativas</li>
+        <li>Autocompaixão para quebrar vícios e mudar hábitos</li>
+        <li>Transformando feridas emocionais em amor-próprio</li>
+      </ol>
+      <ol class="panel" id="mente">
+        <li>Combatendo a ansiedade de maneira integral</li>
+        <li>Suplementos para a saúde cerebral</li>
+        <li>Técnicas de foco, memória e concentração</li>
+        <li>Os melhores nootrópicos para o cérebro</li>
+        <li>De crenças limitantes a crenças de autovalorização</li>
+        <li>As 4 etapas para uma mente positiva</li>
+      </ol>
+      <ol class="panel" id="alma">
+        <li>Prioridades da alma</li>
+        <li>Liberando-se da lealdade inconsciente</li>
+        <li>Perdão e paz interior</li>
+        <li>Mindfulness para a saúde integral</li>
+        <li>Os 4 passos da cocriação e atração da abundância</li>
+        <li>Reencontro com o seu propósito de vida</li>
+      </ol>
+    </div>
+
+    <div class="offer reveal">
+      <div class="offer-l">
+        <span class="eyebrow" style="color:#A9C3AC">Assinatura · Sócio anual</span>
+        <h3>Tudo o que está incluído</h3>
+        <ul class="check">
+          <li>Programa Saúde Integral Magnética com 36 aulas ao vivo e gravações</li>
+          <li>Grupo de Jejum Magnético por 12 meses</li>
+          <li>Áudios diários do Dr. Tiago no grupo de 21 dias</li>
+          <li>Tira-dúvidas diário</li>
+        </ul>
+      </div>
+      <div class="offer-r">
+        <span class="eyebrow" style="color:var(--clay)">Por apenas</span>
+        <div class="price">R$ 49<small>/mês</small></div>
+        <p class="sub">Plano anual com acompanhamento contínuo.</p>
+        <a href="https://drtiagoyalcon.com.br/pre-checkout-psim/" target="_blank" rel="noopener" class="btn btn-clay">Quero participar do Método S.I.M. →</a>
+        <div class="guarantee"><i>✓</i><div><b style="color:var(--ink)">Satisfação garantida.</b> Reembolso incondicional em até 7 dias, por e-mail ou WhatsApp — sem burocracia.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. JEJUM MAGNÉTICO ============ -->
+<section class="dark jejum" id="jejum">
+  <div class="wrap">
+    <div class="jejum-grid">
+      <div class="reveal">
+        <span class="eyebrow">Grupo Jejum Magnético</span>
+        <h2>Melhore sua qualidade de vida e seus hábitos em 21 dias</h2>
+        <p>O jejum pode ser uma forma saudável de alcançar a autofagia, mudar a forma como o corpo capta energia e iniciar uma nova relação com a alimentação.</p>
+        <div class="nobel">
+          <span>Ciência</span>
+          <h4>Autofagia: Prêmio Nobel de Medicina 2016</h4>
+          <p>O cientista japonês Yoshinori Ohsumi foi premiado pela descoberta do mecanismo de autofagia — o processo pelo qual as células “digerem” componentes que já não funcionam bem. Com o jejum, o corpo passa a usar a gordura como energia (corpos cetônicos) e ativa essa “limpeza” celular.</p>
+        </div>
+        <div class="warn"><span>⚠</span><div><b>Importante:</b> o jejum não pode ser feito de qualquer jeito — especialmente os prolongados (acima de 24h). O ideal é ter supervisão médica ou de um profissional de saúde.</div></div>
+      </div>
+      <div class="box21 reveal">
+        <span class="tag">Desafio com supervisão médica</span>
+        <h3>21 dias de Jejum Magnético</h3>
+        <ul class="check">
+          <li>Grupo de WhatsApp por 21 dias</li>
+          <li>4 lives com o Dr. Tiago Yalcon</li>
+          <li>Protocolos de jejum passo a passo — incluindo como quebrar o jejum do jeito certo</li>
+          <li>Guia de chás para desintoxicar</li>
+          <li>Tira-dúvidas diário</li>
+        </ul>
+        <div class="ctas">
+          <a href="https://drtiagoyalcon.com.br/pre-checkout-psim/" target="_blank" rel="noopener" class="btn btn-primary">Garantir minha vaga →</a>
+          <a href="https://wa.me/5547997749140" target="_blank" rel="noopener" class="btn btn-ghost">Tirar dúvidas</a>
+        </div>
+        <p style="color:var(--muted);font-size:14px;margin:20px 0 0">Também incluído no plano anual do Método S.I.M.</p>
+      </div>
+    </div>
+    <div class="jb">
+      <h3 class="reveal">Benefícios do jejum intermitente</h3>
+      <div class="jb-grid">
+        <div class="jb-item reveal"><span>01</span><h4>Desintoxica o corpo</h4><p>Favorece os processos naturais de limpeza do organismo.</p></div>
+        <div class="jb-item reveal"><span>02</span><h4>Emagrece</h4><p>No curto prazo, aumenta a taxa metabólica entre 3,6% e 14%.</p></div>
+        <div class="jb-item reveal"><span>03</span><h4>Equilibra hormônios</h4><p>Reduz a insulina e aumenta o hormônio do crescimento, que favorece a queima de gordura.</p></div>
+        <div class="jb-item reveal"><span>04</span><h4>Reduz a resistência à insulina</h4><p>Diminui o risco de diabetes tipo 2.</p></div>
+        <div class="jb-item reveal"><span>05</span><h4>Diminui dores</h4><p>Reduz o estresse oxidativo e a inflamação.</p></div>
+        <div class="jb-item reveal"><span>06</span><h4>Protege o coração</h4><p>Melhora pressão, colesterol total e LDL, triglicerídeos e marcadores inflamatórios.</p></div>
+        <div class="jb-item reveal"><span>07</span><h4>Ativa a autofagia</h4><p>As células iniciam um processo de “remoção de resíduos”.</p></div>
+        <div class="jb-item reveal"><span>08</span><h4>Previne doenças crônicas</h4><p>Melhora o fator neurotrófico, ligado à saúde do sistema nervoso.</p></div>
+        <div class="jb-item reveal"><span>09</span><h4>Fortalece a imunidade</h4><p>Contribui para um sistema imunológico mais equilibrado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. RESULTADOS / DEPOIMENTOS ============ -->
+<section id="resultados">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Resultados reais</span><h2>Histórias de quem transformou a saúde</h2></div>
+      <p>Participantes do Grupo de Jejum Magnético e do Programa Saúde Integral Magnética.</p>
+    </div>
+    <div class="results">
+      <div class="res reveal"><b>−20 kg</b><strong>Yasmin Daltoé</strong><span>Santa Catarina</span></div>
+      <div class="res reveal"><b>−11 kg</b><strong>Juliana Lubben</strong><span>Santa Catarina</span></div>
+      <div class="res reveal"><b>−10 kg</b><strong>Elton Lubben</strong><span>Santa Catarina</span></div>
+      <div class="res reveal"><b>−9 kg</b><strong>Aline Alves</strong><span>Minas Gerais</span></div>
+      <div class="res reveal"><b>−8 kg</b><strong>Clarissa</strong><span>Santa Catarina</span></div>
+      <div class="res reveal"><b>−5 kg</b><strong>Sandra Assis</strong><span>Santa Catarina</span></div>
+    </div>
+
+    <div class="feat">
+      <article class="story reveal">
+        <div class="kpis"><span>−20 kg</span><span>Manequim 48 → 40</span><span>1 ano de acompanhamento</span></div>
+        <blockquote>“Em 2020 tive um princípio de infarto e a equipe médica disse que eu precisava perder peso. Nos primeiros 21 dias eliminei 6 kg, 5 cm de cintura e 6 cm de quadril. Hoje estou com 20 quilos a menos, mais energia, rejuvenescida e com muito mais foco — sem sofrimento.”</blockquote>
+        <footer><b>Elienne Pimenta</b>Belo Horizonte/MG</footer>
+      </article>
+      <article class="story reveal">
+        <div class="kpis"><span>106 kg → 86 kg</span><span>−8 kg em 21 dias</span><span>Exames melhores</span></div>
+        <blockquote>“Melhorei a autoestima, a disposição e os índices de colesterol, triglicerídeos, ácido úrico e glicemia. Saí da calça 48/50 para a 44 e da camiseta XXG para a G. Interagir no grupo e seguir os protocolos tem sido um grande incentivo.”</blockquote>
+        <footer><b>Ronaldo Okita</b>Campo Grande/MS</footer>
+      </article>
+    </div>
+
+    <div class="slider" id="slider">
+      <article class="tcard"><div class="q">“</div><p>Comecei pesando 101 kg. Emagreci 10 kg, reduzi muito as medidas, minha tireoide, colesterol e triglicerídeos melhoraram — e até parei de fumar. Estou assumindo o controle da minha saúde física e emocional.</p><footer><b>Fernanda Ribeiro</b>Porto Alegre/RS</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Emagreci 3 kg sem fazer dieta e encarando três festas de aniversário. Melhorou minha condição gastrointestinal. O grupo me mostrou que era possível e me deu força para manter a disciplina.</p><footer><b>Joyce</b>Rio de Janeiro/RJ</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Faço tratamento para ansiedade e estou me sentindo bem melhor. Perdi 3 kg, mas meu objetivo maior é saúde e qualidade de vida. Quando comecei, achei que não iria conseguir — o apoio do grupo foi muito importante.</p><footer><b>Edneia</b>Sombrio/SC</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Emagreci 5 quilos nos primeiros 20 dias. Sou muito ansiosa e percebi o quanto comia por gula. O grupo foi um divisor de águas: com apoio e acompanhamento, consegui a disciplina que buscava.</p><footer><b>Marília Munisha</b>Participante do grupo</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Durante os 21 dias de desafio, perdi 6 quilos. O Dr. Tiago sempre nos incentivou e tirou dúvidas, nos fazendo acreditar naquilo que nossa mente tenta sabotar. Foi uma oportunidade incrível!</p><footer><b>Luana</b>Santa Catarina</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Ganhei muito mais energia, reduzi medidas e melhorou minha autoestima. Percebi mais clareza mental e disposição. O que mais me motivou foi estar no grupo, recebendo orientações diárias.</p><footer><b>Nívea Liranyami</b>Participante do grupo</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Tenho 62 anos e há muito tempo tentava perder peso. Com o grupo, tudo ficou mais fácil e prático. Hoje tenho muito mais energia e mais tempo para cuidar de mim.</p><footer><b>Anastásia</b>Araçuaí/MG</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Com o apoio do grupo e os áudios motivadores do Dr. Yalcon, ficou mais fácil passar a barreira das 24 horas. Tive melhora significativa no refluxo e na concentração.</p><footer><b>Cheila</b>Participante do grupo</footer></article>
+      <article class="tcard"><div class="q">“</div><p>Consegui desinchar e emagrecer, e me conheci melhor. Meu maior desafio era o medo de ficar muitas horas sem comer, mas consegui sem nenhum problema. Sem o grupo eu não iria conseguir.</p><footer><b>Valquíria</b>Participante do grupo</footer></article>
+    </div>
+    <div class="slider-nav"><button aria-label="Anterior" data-d="-1">←</button><button aria-label="Próximo" data-d="1">→</button></div>
+  </div>
+</section>
+
+<!-- ============ 9. CONTEÚDO ============ -->
+<section class="surface" id="conteudo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Conteúdo gratuito</span><h2>Saúde explicada de forma simples</h2></div>
+      <p>Temas que mais geram dúvidas no Instagram e no YouTube.</p>
+    </div>
+    <div class="topics">
+      <a class="topic reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><span class="tag">Check-up</span><h3>Passou dos 40? 3 exames fundamentais</h3><span class="play">▶</span></a>
+      <a class="topic reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><span class="tag">Energia</span><h3>Sempre cansada depois dos 40?</h3><span class="play">▶</span></a>
+      <a class="topic reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><span class="tag">Exames</span><h3>Ferritina alta: excesso de ferro ou inflamação?</h3><span class="play">▶</span></a>
+      <a class="topic reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><span class="tag">Dor crônica</span><h3>Fibromialgia na visão integrativa</h3><span class="play">▶</span></a>
+      <a class="topic reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><span class="tag">Jejum</span><h3>Jejum intermitente: por onde começar</h3><span class="play">▶</span></a>
+      <a class="topic reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><span class="tag">Prevenção</span><h3>Câncer: o papel do estilo de vida</h3><span class="play">▶</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9b. LIVROS E PALESTRAS ============ -->
+<section id="palestras">
+  <div class="wrap extra-grid">
+    <div class="extra reveal">
+      <span class="eyebrow">Livros</span>
+      <h3>Conhecimento para levar para casa</h3>
+      <p>Obras e materiais do Dr. Tiago sobre jejum, alimentação e saúde integrativa.</p>
+      <a href="https://linktr.ee/DrTiagoYalcon" target="_blank" rel="noopener">Ver livros →</a>
+    </div>
+    <div class="extra reveal">
+      <span class="eyebrow">Palestras e mentorias</span>
+      <h3>Qualidade de vida para empresas e eventos</h3>
+      <p>Mais de 25 anos como palestrante e mais de 10 mil alunos formados entre master coaches, coaches e líderes. Palestras sobre longevidade, emagrecimento e equilíbrio entre vida pessoal e profissional.</p>
+      <a href="https://wa.me/5547997749140" target="_blank" rel="noopener">Solicitar palestra →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. COMUNIDADE ============ -->
+<section id="comunidade">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Comunidade</span><h2>Acompanhe de perto</h2></div>
+      <p>Conteúdos, avisos de novas turmas e palestras.</p>
+    </div>
+    <div class="comm">
+      <a class="reveal" href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener"><h3>Instagram</h3><p>Dicas diárias para 92,9 mil seguidores.</p><span>@drtiagoyalcon →</span></a>
+      <a class="reveal" href="https://www.youtube.com/" target="_blank" rel="noopener"><h3>YouTube</h3><p>Aulas e conteúdos aprofundados.</p><span>Assistir →</span></a>
+      <a class="reveal" href="https://drtiagoyalcon.com.br/grupo-telegram/" target="_blank" rel="noopener"><h3>Telegram</h3><p>Grupo gratuito com conteúdos e avisos.</p><span>Entrar no grupo →</span></a>
+      <a class="reveal" href="https://drtiagoyalcon.com.br/lista-vip/" target="_blank" rel="noopener"><h3>Lista VIP</h3><p>Seja avisado primeiro das novas turmas de jejum.</p><span>Quero entrar →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FAQ ============ -->
+<section class="faq surface" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal"><span class="eyebrow">Dúvidas frequentes</span><h2>Antes de começar</h2></div>
+    <div class="reveal">
+      <details open><summary>Qual a diferença entre a consulta e o Método S.I.M.?</summary><p>A consulta é um atendimento médico individual, com anamnese, exames, dieta e suplementação para o seu caso. O Método S.I.M. é um programa online em grupo, com 36 aulas ao vivo, Grupo de Jejum Magnético e suporte diário durante 12 meses.</p></details>
+      <details><summary>Como funciona a primeira consulta?</summary><p>Anamnese completa, solicitação de exames, recomendações de dieta e suplementação e orientações para o seu caso. A consulta inclui retorno.</p></details>
+      <details><summary>Como funciona o Grupo de Jejum Magnético?</summary><p>São 21 dias em um grupo de WhatsApp com supervisão médica, 4 lives com o Dr. Tiago, protocolos de jejum passo a passo, guia de chás e tira-dúvidas diário.</p></details>
+      <details><summary>Jejum é seguro para todos?</summary><p>O jejum deve ser feito com orientação, especialmente os prolongados (acima de 24h). Por isso os protocolos do grupo têm supervisão médica.</p></details>
+      <details><summary>E se eu não gostar do programa?</summary><p>Você tem 7 dias de garantia: basta enviar e-mail ou WhatsApp pedindo reembolso, sem burocracia.</p></details>
+      <details><summary>Medicina integrativa substitui o tratamento convencional?</summary><p>Não. Ela integra a medicina convencional com mudanças de estilo de vida e terapias complementares baseadas em evidências.</p></details>
+      <details><summary>Preciso levar exames?</summary><p>Se tiver exames recentes, leve. Caso contrário, os exames necessários serão solicitados na consulta.</p></details>
+      <details><summary>A consulta pode ser online?</summary><p>[Confirmar com o Dr. Tiago] — atendimento presencial e/ou por telemedicina.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. CTA ============ -->
+<section class="cta" id="contato">
+  <div class="wrap reveal">
+    <span class="eyebrow">Comece hoje</span>
+    <h2>Sua melhor fase pode começar <em>depois dos 35.</em></h2>
+    <p>Fale com a equipe pelo WhatsApp para agendar sua consulta ou tirar dúvidas sobre os programas.</p>
+    <div class="ctas">
+      <a href="https://wa.me/5547997749140" target="_blank" rel="noopener" class="btn btn-primary">(47) 99774-9140 · WhatsApp</a>
+      <a href="#metodo-sim" class="btn btn-ghost">Conhecer o Método S.I.M.</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="#" class="logo">Dr. Tiago Yalcon<small>Medicina Integrativa</small></a><p style="margin-top:18px;max-width:320px">Medicina funcional integrativa para saúde 35+: emagrecimento, longevidade, menopausa e suplementação.</p></div>
+      <div><h4>Atendimento</h4><ul><li><a href="#consultas">Consultas</a></li><li><a href="#metodo-sim">Método S.I.M.</a></li><li><a href="#jejum">Jejum Magnético</a></li><li><a href="#resultados">Resultados</a></li></ul></div>
+      <div><h4>Comunidade</h4><ul><li><a href="https://www.instagram.com/drtiagoyalcon/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://drtiagoyalcon.com.br/grupo-telegram/" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://drtiagoyalcon.com.br/lista-vip/" target="_blank" rel="noopener">Lista VIP</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://wa.me/5547997749140" target="_blank" rel="noopener">WhatsApp (47) 99774-9140</a></li><li>Endereço do consultório [inserir]</li><li><a href="https://drtiagoyalcon.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de privacidade</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Dr. Tiago Yalcon · CRM [inserir] · Todos os direitos reservados</span><span>Conteúdo informativo. Resultados variam de pessoa para pessoa. Não substitui consulta médica.</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5547997749140" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.2 1.3z"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===t.dataset.t));
+}));
+const sl=document.getElementById('slider');
+document.querySelectorAll('.slider-nav button').forEach(b=>b.addEventListener('click',()=>sl.scrollBy({left:b.dataset.d*380,behavior:'smooth'})));
+</script>
+</body>
+</html>
