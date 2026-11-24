@@ -510,7 +510,7 @@ details[open] p{animation:rise .5s ease both}
 @keyframes displaybg{to{background-position:300% 0}}
 .marquee::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   background:repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 1px,transparent 1px 4px)}
-.marquee-track{font-size:clamp(22px,2.6vw,32px);gap:44px;animation-duration:32s}
+.marquee-track{font-size:clamp(22px,2.6vw,32px);gap:44px;animation:scroll 32s linear infinite reverse}
 .marquee-track span::after{margin-left:44px}
 .marquee-track span:nth-child(4n+1)::after{color:#7FA88E}
 .marquee-track span:nth-child(4n+2)::after{color:#B9A6E0}
@@ -521,6 +521,7 @@ details[open] p{animation:rise .5s ease both}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+  .marquee-track{animation:scroll 48s linear infinite reverse!important}
   .hero .reveal:first-child>*{opacity:1;transform:none}
   .panel.on li{opacity:1;transform:none}
   .reveal,.reveal.pop,.reveal.left,.reveal.right,.reveal.zoom{opacity:1;transform:none}
